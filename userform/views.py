@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect
-from .forms import UserFormDataForm
+from .forms import UserForm
 
 # Create your views here.
 def user_form_view(request):
     if request.method == 'POST':
-        form = UserFormDataForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')
+            return redirect('success')  # Redirect to a success page
     else:
-        form = UserFormDataForm()
+        form = UserForm()
     return render(request, 'form.html', {'form': form})

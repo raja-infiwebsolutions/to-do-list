@@ -3,5 +3,5 @@ from .views import user_form_view
 
 urlpatterns = [
     path('', user_form_view, name='user_form'),
-    path('success/', lambda request: render(request, 'success.html')),  # Placeholder for success page
+    path('success/', TemplateView.as_view(template_name='success.html'), name='success'),
 ]
