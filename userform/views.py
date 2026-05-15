@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
 
-# Create your views here.
+
 def user_form_view(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
